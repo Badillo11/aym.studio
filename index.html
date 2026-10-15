@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A&M Studio | Moda Masculina Oversize & Old Money</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Playfair Display for Luxury titles, Poppins for Body Text -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --pastel-blue-light: #EAF6F6;
+            --pastel-blue: #A8DADC;
+            --pastel-blue-dark: #457B9D;
+            --navy-blue: #1D3557;
+            --light-gray: #F8F9FA;
+            --medium-gray: #6C757D;
+            --white: #FFFFFF;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--navy-blue);
+            background-color: var(--white);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6, .brand-font {
+            font-family: 'Playfair Display', serif;
+            letter-spacing: -0.5px;
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 15px rgba(29, 53, 87, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .navbar-brand {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--navy-blue) !important;
+            letter-spacing: 2px;
+        }
+
+        .navbar-brand span {
+            color: var(--pastel-blue-dark);
+            font-weight: 400;
+        }
+
+        .nav-link {
+            font-weight: 500;
+            color: var(--navy-blue) !important;
+            margin: 0 8px;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--pastel-blue-dark) !important;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--pastel-blue-light) 0%, #FFFFFF 100%);
+            padding: 130px 0 90px;
+            min-height: 92vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-badge {
+            background-color: rgba(168, 218, 220, 0.3);
+            color: var(--navy-blue);
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 600;
+            padding: 8px 18px;
+            border-radius: 30px;
+            border: 1px solid var(--pastel-blue);
+        }
+
+        .btn-custom {
+            background-color: var(--pastel-blue-dark);
+            color: var(--white);
+            font-weight: 600;
+            padding: 14px 32px;
+            border-radius: 4px;
+            border: none;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(69, 123, 157, 0.3);
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-custom:hover {
+            background-color: var(--navy-blue);
+            color: var(--white);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(29, 53, 87, 0.4);
+        }
+
+        .btn-outline-custom {
+            background-color: transparent;
+            color: var(--navy-blue);
+            border: 1.5px solid var(--navy-blue);
+            font-weight: 600;
+            padding: 13px 30px;
+            border-radius: 4px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-outline-custom:hover {
+            background-color: var(--navy-blue);
+            color: var(--white);
+        }
+
+        .hero-img {
+            border-radius: 12px;
+            box-shadow: 0 25px 50px rgba(29, 53, 87, 0.12);
+            object-fit: cover;
+            width: 100%;
+            height: 520px;
+        }
+
+        /* Cards & Categories */
+        .category-card {
+            background-color: var(--white);
+            border: 1px solid rgba(168, 218, 220, 0.4);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+
+        .category-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(29, 53, 87, 0.08);
+            border-color: var(--pastel-blue-dark);
+        }
+
+        .category-img {
+            height: 320px;
+            object-fit: cover;
+            width: 100%;
+        }
+
+        /* Philosophy Section */
+        .philosophy-section {
+            background-color: var(--pastel-blue-light);
+            border-top: 1px solid rgba(168, 218, 220, 0.5);
+            border-bottom: 1px solid rgba(168, 218, 220, 0.5);
+        }
+
+        /* Lookbook / Gallery */
+        .lookbook-item {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+        }
+
+        .lookbook-item img {
+            width: 100%;
+            height: 420px;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .lookbook-item:hover img {
+            transform: scale(1.06);
+        }
+
+        .lookbook-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(29, 53, 87, 0.9), transparent);
+            color: white;
+            padding: 30px 20px 20px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .lookbook-item:hover .lookbook-overlay {
+            opacity: 1;
+        }
+
+        /* Testimonials */
+        .testimonial-card {
+            background: var(--light-gray);
+            border-left: 4px solid var(--pastel-blue-dark);
+            border-radius: 0 8px 8px 0;
+            padding: 25px;
+        }
+
+        /* Floating Social Widgets */
+        .floating-social {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .social-btn {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 26px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+            text-decoration: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .social-btn:hover {
+            transform: scale(1.12);
+            color: white;
+        }
+
+        .btn-whatsapp {
+            background-color: #25D366;
+        }
+
+        .btn-instagram {
+            background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--navy-blue);
+            color: rgba(255,255,255,0.8);
+        }
+
+        footer h5 {
+            color: var(--white);
+        }
+
+        footer a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: var(--pastel-blue);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand brand-font" href="#">A&M <span>STUDIO</span></a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link active" href="#inicio">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#estilos">Estilos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#colecciones">Colecciones</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#filosofia">Filosofía</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+                    <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+                        <a href="https://wa.me/584129621627" target="_blank" class="btn btn-custom btn-sm">Catálogo WhatsApp</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero">
+        <div class="container">
+            <div class="row align-items-center gy-5">
+                <div class="col-lg-6">
+                    <span class="hero-badge mb-3 d-inline-block">Men's Exclusive Fashion</span>
+                    <h1 class="display-4 fw-bold mb-4" style="color: var(--navy-blue);">El Arte de Vestir con Distinción: Moda Masculina Oversize & Old Money</h1>
+                    <p class="lead text-muted mb-4 fs-6">Redefinimos la elegancia masculina. Fusionamos la sofisticación atemporal del estilo Old Money con el confort urbano vanguardista del corte Oversize.</p>
+                    <div class="d-flex flex-wrap gap-3">
+                        <a href="#colecciones" class="btn btn-custom">Explorar Colección</a>
+                        <a href="https://wa.me/584129621627" target="_blank" class="btn btn-outline-custom">Asesoría de Imagen</a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="position-relative">
+                        <img src="watermarked_img_3371136568277942488.jpg" alt="Look Masculino Old Money & Oversize A&M Studio" class="hero-img">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Estilos & Categorías principal -->
+    <section id="estilos" class="py-5">
+        <div class="container py-5">
+            <div class="text-center mx-auto mb-5" style="max-width: 650px;">
+                <span class="text-uppercase text-muted fw-bold small tracking-wider">Líneas de Diseño</span>
+                <h2 class="display-5 fw-bold mt-2">Nuestras Colecciones</h2>
+                <p class="text-muted">Confeccionadas con materiales de máxima densidad, caídas impecables y paletas de tonos neutros y pastel.</p>
+            </div>
+            
+            <div class="row g-4">
+                <!-- Old Money Line -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="category-card">
+                        <img src="watermarked_img_12363956478572071891.jpg" alt="Línea Old Money Masculina" class="category-img">
+                        <div class="p-4">
+                            <h3 class="h4 fw-bold">Línea Old Money</h3>
+                            <p class="text-muted small">Elegancia sobria sin ostentación. Polos de tejido en punto, camisas de lino premium, pantalones de vestir de silueta relajada y mocasines atemporales.</p>
+                            <a href="https://wa.me/584129621627" target="_blank" class="text-decoration-none fw-bold small text-uppercase" style="color: var(--pastel-blue-dark);">Ver Prendas <i class="fa-solid fa-arrow-right ms-1"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Oversize Essentials -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="category-card">
+                        <img src="watermarked_img_5555461458357721732.jpg" alt="Línea Oversize Essentials" class="category-img">
+                        <div class="p-4">
+                            <h3 class="h4 fw-bold">Oversize Essentials</h3>
+                            <p class="text-muted small">Corte holgado de alta estructura. Camisetas Heavyweight algodón de 240g, hoodies sobrios minimalistas y bermudas tailored de caída impecable.</p>
+                            <a href="https://wa.me/584129621627" target="_blank" class="text-decoration-none fw-bold small text-uppercase" style="color: var(--pastel-blue-dark);">Ver Prendas <i class="fa-solid fa-arrow-right ms-1"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Accesorios & Detalles -->
+                <div class="col-lg-4 col-md-6 mx-auto">
+                    <div class="category-card">
+                        <img src="watermarked_img_17391502274649856558.jpg" alt="Accesorios Masculinos" class="category-img">
+                        <div class="p-4">
+                            <h3 class="h4 fw-bold">Accesorios & Detalles</h3>
+                            <p class="text-muted small">El toque final de distinción. Relojes con correas de cuero fino, gafas de sol vintage con montura sobria y joyería discreta en plata 925.</p>
+                            <a href="https://wa.me/584129621627" target="_blank" class="text-decoration-none fw-bold small text-uppercase" style="color: var(--pastel-blue-dark);">Ver Accesorios <i class="fa-solid fa-arrow-right ms-1"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filosofía / Estilo de Vida -->
+    <section id="filosofia" class="philosophy-section py-5">
+        <div class="container py-5">
+            <div class="row align-items-center gy-5">
+                <div class="col-lg-6">
+                    <img src="watermarked_img_5555461458357721732.jpg" alt="Filosofía A&M Studio Moda Masculina" class="img-fluid rounded-4 shadow-sm">
+                </div>
+                <div class="col-lg-6">
+                    <span class="text-uppercase text-muted fw-bold small tracking-wider">Estilo de Vida & Estética</span>
+                    <h2 class="display-5 fw-bold mt-2 mb-4">Donde el Confort Moderno Encuentra la Herencia Clásica</h2>
+                    <p class="text-muted">En <strong>A&M Studio</strong> creemos que la elegancia no debe comprometer la comodidad. Rompemos el esquema tradicional combinando la sastrería relajada y estética aristocrática del <em>Old Money</em> con las proporciones libres y urbanas del estilo <em>Oversize</em>.</p>
+                    <p class="text-muted mb-4">Nuestra paleta distintiva basada en tonos azul pastel, blanco marfil, crema y grises neutros ofrece una estética limpia, fresca y atemporal diseñada para hombres que comunican poder y serenidad sin decir una palabra.</p>
+                    
+                    <div class="row g-3">
+                        <div class="col-sm-6">
+                            <div class="d-flex align-items-center">
+                                <i class="fa-solid fa-check text-success me-2 fs-5"></i>
+                                <span class="fw-semibold">Tejidos de Alta Gramaje</span>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="d-flex align-items-center">
+                                <i class="fa-solid fa-check text-success me-2 fs-5"></i>
+                                <span class="fw-semibold">Cortes y Patrones Exclusivos</span>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="d-flex align-items-center">
+                                <i class="fa-solid fa-check text-success me-2 fs-5"></i>
+                                <span class="fw-semibold">Tonos Pastel y Neutros</span>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="d-flex align-items-center">
+                                <i class="fa-solid fa-check text-success me-2 fs-5"></i>
+                                <span class="fw-semibold">Atuendos Versátiles</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lookbook Section -->
+    <section id="colecciones" class="py-5">
+        <div class="container py-5">
+            <div class="text-center mx-auto mb-5" style="max-width: 650px;">
+                <span class="text-uppercase text-muted fw-bold small tracking-wider">Lookbook Interactivo</span>
+                <h2 class="display-5 fw-bold mt-2">Galería de Estilos A&M</h2>
+                <p class="text-muted">Inspiración para combinar tus atuendos diarios con la dosis perfecta de sofisticación.</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-4 col-sm-6">
+                    <div class="lookbook-item">
+                        <img src="watermarked_img_3371136568277942488.jpg" alt="Look Old Money Casual">
+                        <div class="lookbook-overlay">
+                            <h4 class="h5 mb-1">Look Soft Tailored</h4>
+                            <p class="small text-light mb-0">Pantalon plisado en tono crema y camiseta boxy fit.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="lookbook-item">
+                        <img src="watermarked_img_5555461458357721732.jpg" alt="Look Oversize Urbano">
+                        <div class="lookbook-overlay">
+                            <h4 class="h5 mb-1">Minimalist Oversize</h4>
+                            <p class="small text-light mb-0">Polo Knit azul pastel y pantalones de caída recta.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="lookbook-item">
+                        <img src="watermarked_img_12363956478572071891.jpg" alt="Accesorios y Calzado Old Money">
+                        <div class="lookbook-overlay">
+                            <h4 class="h5 mb-1">Old Money Essentials</h4>
+                            <p class="small text-light mb-0">Camisa de lino blanca, mocasines y reloj de correa de cuero.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonios -->
+    <section class="py-5 bg-light">
+        <div class="container py-4">
+            <div class="text-center mx-auto mb-5" style="max-width: 600px;">
+                <h2 class="h1 fw-bold">Lo Que Dicen Nuestros Clientes</h2>
+                <p class="text-muted">Hombres que confían en A&M Studio para elevar su vestuario diario.</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="testimonial-card h-100">
+                        <div class="text-warning mb-2">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-muted small fst-italic">"La calidad de las camisetas heavyweight es increíble. Tienen la caída oversize perfecta sin lucir desalineadas. 100% recomendado."</p>
+                        <h6 class="fw-bold mb-0 mt-3">— Carlos M.</h6>
+                        <small class="text-muted">Caracas, Venezuela</small>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="testimonial-card h-100">
+                        <div class="text-warning mb-2">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-muted small fst-italic">"El estilo Old Money que manejan es impecable. Las camisas de lino en tonos azul pastel destacan en cualquier reunión."</p>
+                        <h6 class="fw-bold mb-0 mt-3">— Alejandro R.</h6>
+                        <small class="text-muted">Valencia, Venezuela</small>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="testimonial-card h-100">
+                        <div class="text-warning mb-2">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-muted small fst-italic">"Atención súper rápida por WhatsApp y la asesoría de tallas fue exacta. Definitivamente volveré a comprar."</p>
+                        <h6 class="fw-bold mb-0 mt-3">— Gabriel S.</h6>
+                        <small class="text-muted">Barquisimeto, Venezuela</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto Section -->
+    <section id="contacto" class="py-5">
+        <div class="container py-5">
+            <div class="row gy-5 align-items-center">
+                <div class="col-lg-6">
+                    <span class="text-uppercase text-muted fw-bold small tracking-wider">Atención Personalizada</span>
+                    <h2 class="display-5 fw-bold mt-2 mb-4">Haz tu Pedido o Consulta de Estilo</h2>
+                    <p class="text-muted mb-4">Contáctanos directamente para coordinar tus compras, consultar disponibilidad de tallas o recibir asesoría para armar tus outfits.</p>
+                    
+                    <div class="d-flex align-items-center mb-4">
+                        <div class="rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 50px; height: 50px; background-color: var(--pastel-blue-light); color: var(--pastel-blue-dark); font-size: 22px;">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </div>
+                        <div>
+                            <strong class="d-block">WhatsApp Oficial:</strong>
+                            <a href="https://wa.me/584129621627" target="_blank" class="text-decoration-none text-muted">+58 412 9621627</a>
+                        </div>
+                    </div>
+
+                    <div class="d-flex align-items-center">
+                        <div class="rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 50px; height: 50px; background-color: var(--pastel-blue-light); color: var(--pastel-blue-dark); font-size: 22px;">
+                            <i class="fa-brands fa-instagram"></i>
+                        </div>
+                        <div>
+                            <strong class="d-block">Instagram Oficial:</strong>
+                            <a href="https://instagram.com/aym.studio0209" target="_blank" class="text-decoration-none text-muted">@aym.studio0209</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="bg-white p-4 p-md-5 rounded-4 shadow-sm border">
+                        <form id="contactForm">
+                            <h3 class="h4 fw-bold mb-4">Envíanos un mensaje</h3>
+                            <div class="mb-3">
+                                <label class="form-label small fw-semibold">Nombre Completo</label>
+                                <input type="text" class="form-control" required placeholder="Tu nombre">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label small fw-semibold">Teléfono o Correo</label>
+                                <input type="text" class="form-control" required placeholder="Ej. +584120000000">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label small fw-semibold">Prenda de Interés / Mensaje</label>
+                                <textarea class="form-control" rows="4" required placeholder="Hola, me interesan las camisetas oversize y camisas de lino..."></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-custom w-100">Enviar Solicitud</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-5">
+        <div class="container">
+            <div class="row gy-4 mb-4">
+                <div class="col-lg-4">
+                    <h4 class="brand-font fw-bold mb-3">A&M <span>STUDIO</span></h4>
+                    <p class="small text-white-50">Marca exclusiva de moda masculina enfocada en la estética Old Money y cortes Oversize de alta gama.</p>
+                </div>
+                <div class="col-lg-4">
+                    <h5 class="fw-bold mb-3">Enlaces Rápidos</h5>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2"><a href="#inicio">Inicio</a></li>
+                        <li class="mb-2"><a href="#estilos">Estilos & Líneas</a></li>
+                        <li class="mb-2"><a href="#filosofia">Nuestra Filosofía</a></li>
+                        <li class="mb-2"><a href="#colecciones">Lookbook</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h5 class="fw-bold mb-3">Conéctate con Nosotros</h5>
+                    <div class="d-flex gap-3 fs-5">
+                        <a href="https://instagram.com/aym.studio0209" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://wa.me/584129621627" target="_blank" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="border-secondary">
+            <div class="text-center small text-white-50 pt-2">
+                &copy; 2026 A&M Studio (@aym.studio0209). Todos los derechos reservados.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Social Buttons -->
+    <div class="floating-social">
+        <!-- Instagram Button -->
+        <a href="https://instagram.com/aym.studio0209" target="_blank" class="social-btn btn-instagram" title="Síguenos en Instagram @aym.studio0209">
+            <i class="fa-brands fa-instagram"></i>
+        </a>
+        <!-- WhatsApp Button -->
+        <a href="https://wa.me/584129621627" target="_blank" class="social-btn btn-whatsapp" title="Chatea por WhatsApp +584129621627">
+            <i class="fa-brands fa-whatsapp"></i>
+        </a>
+    </div>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Form Handler
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('¡Gracias por comunicarte con A&M Studio! Responderemos a tu solicitud a la brevedad posible.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
